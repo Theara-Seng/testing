@@ -44,7 +44,7 @@ let KEYs_F = DigitalPin.P12;
  * Operational remote JoyStick function
  */
 //% weight=20 color=#3333FF icon="\uf11b"
-namespace WSJoyStick {
+namespace joysticker {
     let Read_X = 0, Read_Y = 0;
     //% blockId==JoyStickInit block="JoyStickInit"
     //% weight=100

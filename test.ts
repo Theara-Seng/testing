@@ -1,6 +1,4 @@
-// tests go here; this will not be compiled when this package is used as a library
-
-WSJoyStick.onKey(KEY.P, () => {
+joysticker.onKEYs(KEYs.P, () => {
     basic.showLeds(`
         . # # # .
         . # . # .
@@ -9,7 +7,7 @@ WSJoyStick.onKey(KEY.P, () => {
         . # . . .
         `)
 })
-WSJoyStick.onKey(KEY.A, () => {
+joysticker.onKEYs(KEYs.A, () => {
     basic.showLeds(`
         . . # . .
         . # . # .
@@ -18,7 +16,7 @@ WSJoyStick.onKey(KEY.A, () => {
         . # . # .
         `)
 })
-WSJoyStick.onKey(KEY.B, () => {
+joysticker.onKEYs(KEYs.B, () => {
     basic.showLeds(`
         . # . . .
         . # . . .
@@ -27,7 +25,7 @@ WSJoyStick.onKey(KEY.B, () => {
         . # # # .
         `)
 })
-WSJoyStick.onKey(KEY.C, () => {
+joysticker.onKEYs(KEYs.C, () => {
     basic.showLeds(`
         . . # # .
         . # . . .
@@ -36,7 +34,7 @@ WSJoyStick.onKey(KEY.C, () => {
         . . # # .
         `)
 })
-WSJoyStick.onKey(KEY.D, () => {
+joysticker.onKEYs(KEYs.D, () => {
     basic.showLeds(`
         . # # . .
         . # . # .
@@ -45,7 +43,7 @@ WSJoyStick.onKey(KEY.D, () => {
         . # # . .
         `)
 })
-WSJoyStick.onKey(KEY.F, () => {
+joysticker.onKEYs(KEYs.F, () => {
     basic.showLeds(`
         . # # # .
         . # . . .
@@ -54,7 +52,7 @@ WSJoyStick.onKey(KEY.F, () => {
         . # . . .
         `)
 })
-WSJoyStick.onKey(KEY.E, () => {
+joysticker.onKEYs(KEYs.E, () => {
     basic.showLeds(`
         . # # # .
         . # . . .
@@ -63,31 +61,31 @@ WSJoyStick.onKey(KEY.E, () => {
         . # # # .
         `)
 })
-WSJoyStick.JoyStickInit()
-WSJoyStick.PlayMusic(262, music.beat(BeatFraction.Whole))
-WSJoyStick.PlayMusic(294, music.beat(BeatFraction.Whole))
-WSJoyStick.PlayMusic(330, music.beat(BeatFraction.Whole))
-WSJoyStick.PlayMusic(349, music.beat(BeatFraction.Whole))
-WSJoyStick.PlayMusic(392, music.beat(BeatFraction.Whole))
-WSJoyStick.PlayMusic(440, music.beat(BeatFraction.Whole))
-WSJoyStick.PlayMusic(494, music.beat(BeatFraction.Whole))
-WSJoyStick.PlayMusic(523, music.beat(BeatFraction.Whole))
+joysticker.JoyStickInits()
+joysticker.PlayMusics(262, music.beat(BeatFraction.Whole))
+joysticker.PlayMusics(294, music.beat(BeatFraction.Whole))
+joysticker.PlayMusics(330, music.beat(BeatFraction.Whole))
+joysticker.PlayMusics(349, music.beat(BeatFraction.Whole))
+joysticker.PlayMusics(392, music.beat(BeatFraction.Whole))
+joysticker.PlayMusics(440, music.beat(BeatFraction.Whole))
+joysticker.PlayMusics(494, music.beat(BeatFraction.Whole))
+joysticker.PlayMusics(523, music.beat(BeatFraction.Whole))
 basic.forever(() => {
-    if (WSJoyStick.Listen_Dir(DIR.U)) {
+    if (joysticker.Listen_Dirs(DIRS.U)) {
         images.arrowImage(ArrowNames.North).showImage(0)
-    } else if (WSJoyStick.Listen_Dir(DIR.D)) {
+    } else if (joysticker.Listen_Dirs(DIRS.D)) {
         images.arrowImage(ArrowNames.South).showImage(0)
-    } else if (WSJoyStick.Listen_Dir(DIR.L)) {
+    } else if (joysticker.Listen_Dirs(DIRS.L)) {
         images.arrowImage(ArrowNames.West).showImage(0)
-    } else if (WSJoyStick.Listen_Dir(DIR.R)) {
+    } else if (joysticker.Listen_Dirs(DIRS.R)) {
         images.arrowImage(ArrowNames.East).showImage(0)
-    } else if (WSJoyStick.Listen_Dir(DIR.U_R)) {
+    } else if (joysticker.Listen_Dirs(DIRS.U_R)) {
         images.arrowImage(ArrowNames.NorthEast).showImage(0)
-    } else if (WSJoyStick.Listen_Dir(DIR.D_R)) {
+    } else if (joysticker.Listen_Dirs(DIRS.D_R)) {
         images.arrowImage(ArrowNames.SouthEast).showImage(0)
-    } else if (WSJoyStick.Listen_Dir(DIR.U_L)) {
+    } else if (joysticker.Listen_Dirs(DIRS.U_L)) {
         images.arrowImage(ArrowNames.NorthWest).showImage(0)
-    } else if (WSJoyStick.Listen_Dir(DIR.D_L)) {
+    } else if (joysticker.Listen_Dirs(DIRS.D_L)) {
         images.arrowImage(ArrowNames.SouthWest).showImage(0)
     } else {
         basic.showLeds(`
