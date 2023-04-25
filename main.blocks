@@ -1,7 +1,7 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id=";{NP!Sz9hSM|HLcV=?0D" x="0" y="0"><statement name="HANDLER"><block type="device_show_leds" id="a5QG,!7Atp~6G|Dx8s}O"><field name="LEDS">`
+<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id=";{NP!Sz9hSM|HLcV=?0D" x="0" y="0"><statement name="HANDLER"><block type="=JoyStickInit" id="Yy)7gEDdPgJ/F^KpNUu="></block></statement></block><block type="=onKey" id="WkBM=P@*nlHcif))ueek" x="155" y="301"><field name="pin">KEY.C</field><statement name="HANDLER"><block type="PlayMusic" id="{Gw3vlv:YkI/i)wgNcWO"><value name="note"><shadow type="device_note" id="*VZ(^H-Oh)v%v.8D#92w"><field name="name">262</field></shadow></value><value name="duration"><shadow type="device_beat" id="LExc-NG[z5G%$JVBdfN%"><field name="fraction">BeatFraction.Whole</field></shadow></value></block></statement></block><block type="=onKEYs" id="[FVPR#_0?P25x;2~AoMN" x="217" y="409"><field name="pin">KEYs.P</field><statement name="HANDLER"><block type="device_show_leds" id="a5QG,!7Atp~6G|Dx8s}O"><field name="LEDS">`
         . . . . . 
         . # . # . 
         . . . . . 
-        # . . . # 
+        # # . . # 
         . # # # .
         `</field></block></statement></block></xml>
