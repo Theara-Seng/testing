@@ -10,7 +10,8 @@
     "files": [
         "main.blocks",
         "main.ts",
-        "README.md"
+        "README.md",
+        "joystic.ts"
     ],
     "testFiles": [
         "test.ts"
