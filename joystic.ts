@@ -9,7 +9,7 @@
 * | Info        :   Basic version
 *
 ******************************************************************************/
-enum DIR {
+enum DIRS {
     NONE = 0,
     U = 1,
     D = 2,
@@ -21,7 +21,7 @@ enum DIR {
     D_R = 8
 }
 
-enum KEY {
+enum KEYs {
     P = 0,
     A = 1,
     B = 2,
@@ -30,15 +30,15 @@ enum KEY {
     E = 5,
     F = 6,
 }
-let JoyStick_P = DigitalPin.P8;
-let JoyStick_X = AnalogPin.P1;
-let JoyStick_Y = AnalogPin.P2;
-let KEY_A = DigitalPin.P5;
-let KEY_B = DigitalPin.P11;
-let KEY_C = DigitalPin.P15;
-let KEY_D = DigitalPin.P14;
-let KEY_E = DigitalPin.P13;
-let KEY_F = DigitalPin.P12;
+let JoyStick_Ps = DigitalPin.P8;
+let JoyStick_Xs = AnalogPin.P1;
+let JoyStick_Ys = AnalogPin.P2;
+let KEYs_A = DigitalPin.P5;
+let KEYs_B = DigitalPin.P11;
+let KEYs_C = DigitalPin.P15;
+let KEYs_D = DigitalPin.P14;
+let KEYs_E = DigitalPin.P13;
+let KEYs_F = DigitalPin.P12;
 
 /**
  * Operational remote JoyStick function
@@ -48,43 +48,43 @@ namespace WSJoyStick {
     let Read_X = 0, Read_Y = 0;
     //% blockId==JoyStickInit block="JoyStickInit"
     //% weight=100
-    export function JoyStickInit(): void {
-        pins.setPull(JoyStick_P, PinPullMode.PullUp);
-        pins.setPull(KEY_A, PinPullMode.PullUp);
-        pins.setPull(KEY_B, PinPullMode.PullUp);
-        pins.setPull(KEY_C, PinPullMode.PullUp);
-        pins.setPull(KEY_D, PinPullMode.PullUp);
-        pins.setPull(KEY_E, PinPullMode.PullUp);
-        pins.setPull(KEY_F, PinPullMode.PullUp);
+    export function JoyStickInits(): void {
+        pins.setPull(JoyStick_Ps, PinPullMode.PullUp);
+        pins.setPull(KEYs_A, PinPullMode.PullUp);
+        pins.setPull(KEYs_B, PinPullMode.PullUp);
+        pins.setPull(KEYs_C, PinPullMode.PullUp);
+        pins.setPull(KEYs_D, PinPullMode.PullUp);
+        pins.setPull(KEYs_E, PinPullMode.PullUp);
+        pins.setPull(KEYs_F, PinPullMode.PullUp);
 
         //10 bits of AD conversion chip，max = 1024
-        Read_X = pins.analogReadPin(JoyStick_X);
-        Read_Y = pins.analogReadPin(JoyStick_Y);
+        Read_X = pins.analogReadPin(JoyStick_Xs);
+        Read_Y = pins.analogReadPin(JoyStick_Ys);
     }
 
-    //% blockId==Listen_Key block="Key %pin |Press"
+    //% blockId==Listen_KEYs block="KEYs %pin |Press"
     //% weight=90
-    export function Listen_Key(pin: KEY): boolean {
+    export function Listen_KEYss(pin: KEYs): boolean {
         let Val = 2;
 
         //Read pin 
-        if (pin == KEY.P) {
-            Val = pins.digitalReadPin(JoyStick_P);
-        } else if (pin == KEY.A) {
-            Val = pins.digitalReadPin(KEY_A);
-        } else if (pin == KEY.B) {
-            Val = pins.digitalReadPin(KEY_B);
-        } else if (pin == KEY.C) {
-            Val = pins.digitalReadPin(KEY_C);
-        } else if (pin == KEY.D) {
-            Val = pins.digitalReadPin(KEY_D);
-        } else if (pin == KEY.E) {
-            Val = pins.digitalReadPin(KEY_E);
+        if (pin == KEYs.P) {
+            Val = pins.digitalReadPin(JoyStick_Ps);
+        } else if (pin == KEYs.A) {
+            Val = pins.digitalReadPin(KEYs_A);
+        } else if (pin == KEYs.B) {
+            Val = pins.digitalReadPin(KEYs_B);
+        } else if (pin == KEYs.C) {
+            Val = pins.digitalReadPin(KEYs_C);
+        } else if (pin == KEYs.D) {
+            Val = pins.digitalReadPin(KEYs_D);
+        } else if (pin == KEYs.E) {
+            Val = pins.digitalReadPin(KEYs_E);
         } else {
-            Val = pins.digitalReadPin(KEY_F);
+            Val = pins.digitalReadPin(KEYs_F);
         }
 
-        //registerWithDal((int)pin, MICROBIT_KEY_EVT_CLICK, body);
+        //registerWithDal((int)pin, MICROBIT_KEYs_EVT_CLICK, body);
         //To determine the value
         if (Val == 0) {
             return true;
@@ -93,34 +93,34 @@ namespace WSJoyStick {
         }
     }
 
-    //% blockId==onKey block="Key %pin |Press"
+    //% blockId==onKEYs block="KEYs %pin |Press"
     //% weight=80
-    export function onKey(pin: KEY, body: Action): void {
+    export function onKEYs(pin: KEYs, body: Action): void {
         let Pin = 0;
 
         //Read pin 
-        if (pin == KEY.P) {
-            Pin = JoyStick_P;
-        } else if (pin == KEY.A) {
-            Pin = KEY_A;
-        } else if (pin == KEY.B) {
-            Pin = KEY_B;
-        } else if (pin == KEY.C) {
-            Pin = KEY_C;
-        } else if (pin == KEY.D) {
-            Pin = KEY_D;
-        } else if (pin == KEY.E) {
-            Pin = KEY_E;
+        if (pin == KEYs.P) {
+            Pin = JoyStick_Ps;
+        } else if (pin == KEYs.A) {
+            Pin = KEYs_A;
+        } else if (pin == KEYs.B) {
+            Pin = KEYs_B;
+        } else if (pin == KEYs.C) {
+            Pin = KEYs_C;
+        } else if (pin == KEYs.D) {
+            Pin = KEYs_D;
+        } else if (pin == KEYs.E) {
+            Pin = KEYs_E;
         } else {
-            Pin = KEY_F;
+            Pin = KEYs_F;
         }
         pins.onPulsed(Pin, PulseValue.Low, body);
     }
 
-    //% blockId==Listen_Dir block="DIR Dir %pin "
+    //% blockId==Listen_DIRS block="DIRS DIRS %pin "
     //% weight=70
-    export function Listen_Dir(Dir: DIR): boolean {
-        let Get_Dir = DIR.NONE;
+    export function Listen_Dirs(Dir: DIRS): boolean {
+        let Get_DIRS = DIRS.NONE;
 
         let New_X = pins.analogReadPin(AnalogPin.P1);
         let New_Y = pins.analogReadPin(AnalogPin.P2);
@@ -136,27 +136,27 @@ namespace WSJoyStick {
         let Precision = 150; //0.5v
 
         if (Right > Precision && Dy < Precision) {
-            Get_Dir = DIR.R;
+            Get_DIRS = DIRS.R;
         } else if (Left > Precision && Dy < Precision) {
-            Get_Dir = DIR.L;
+            Get_DIRS = DIRS.L;
         } else if (Up > Precision && Dx < Precision) {
-            Get_Dir = DIR.U;
+            Get_DIRS = DIRS.U;
         } else if (Down > Precision && Dx < Precision) {
-            Get_Dir = DIR.D;
+            Get_DIRS = DIRS.D;
         } else if (Right > Precision && Up > Precision) {
-            Get_Dir = DIR.U_R;
+            Get_DIRS = DIRS.U_R;
         } else if (Right > Precision && Down > Precision) {
-            Get_Dir = DIR.D_R;
+            Get_DIRS = DIRS.D_R;
         } else if (Left > Precision && Up > Precision) {
-            Get_Dir = DIR.U_L;
+            Get_DIRS = DIRS.U_L;
         } else if (Left > Precision && Down > Precision) {
-            Get_Dir = DIR.D_L;
+            Get_DIRS = DIRS.D_L;
         } else {
-            Get_Dir = DIR.NONE;
+            Get_DIRS = DIRS.NONE;
         }
 
         //To determine the value
-        if (Get_Dir == Dir) {
+        if (Get_DIRS == Dir) {
             return true;
         } else {
             return false;
@@ -172,7 +172,7 @@ namespace WSJoyStick {
     //% blockId=PlayMusic block="Play |Music %note=device_note|for %duration=device_beat" blockGap=8
     //% parts="headphone"
     //% useEnumVal=1
-    export function PlayMusic(frequency: number, ms: number): void {
+    export function PlayMusics(frequency: number, ms: number): void {
         pins.analogPitch(frequency, ms);
     }
 

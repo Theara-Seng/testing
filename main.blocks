@@ -1,1 +1,7 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id="Kfbx!lI,R+n:XR`~UL/." x="0" y="0"><statement name="HANDLER"><block type="typescript_statement" id="9-qekFaOX^ANjkFiyU;e" editable="false"><mutation xmlns="http://www.w3.org/1999/xhtml" line0="namespace screenMagics {" line1="    export function plotAts(index: number): void {" line2="        index |= 0" line3="        const x = Math.floor(index / 5);" line4="        const y = Math.floor(index % 5);" line5="        led.plot(x, y)" line6="    }" line7="}" numlines="8"></mutation></block></statement></block></xml>
+<xml xmlns="https://developers.google.com/blockly/xml"><block type="pxt-on-start" id=";{NP!Sz9hSM|HLcV=?0D" x="0" y="0"><statement name="HANDLER"><block type="device_show_leds" id="a5QG,!7Atp~6G|Dx8s}O"><field name="LEDS">`
+        . . . . . 
+        . # . # . 
+        . . . . . 
+        # . . . # 
+        . # # # .
+        `</field></block></statement></block></xml>

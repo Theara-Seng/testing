@@ -5,7 +5,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "testing": "github:Theara-Seng/testing#v0.0.2"
     },
     "files": [
         "main.blocks",
