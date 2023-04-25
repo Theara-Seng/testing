@@ -12,7 +12,8 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "joystic.ts"
+        "joystic.ts",
+        "tutorial-info-cache.json"
     ],
     "testFiles": [
         "test.ts"
